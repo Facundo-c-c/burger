@@ -1,7 +1,28 @@
+@font-face {
+    font-family: nerd-font;
+    src: url(/font/0xProtoNerdFontMono-Regular.ttf); /* tomada de https://www.nerdfonts.com/#home */
+
+}
 img{
-    background-color: white;
+    background-color: rgb(222, 221, 221); 
+
 }
 .navbar{
     display: flex;
     justify-content: center;
+}
+.card-img-top,
+.card{
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px; 
+}
+*{
+    font-family: nerd-font;
+}
+.btn-danger{
+    font-size: 30px;
+    width: 100px;
+}
+header{
+    border-bottom: 3px black;
 }

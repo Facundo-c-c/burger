@@ -39,3 +39,12 @@ function precio_tabla(num) {
     let pecio_total = document.getElementById("boton_precio");
     pecio_total.innerHTML = "Pagar " + monto_total + "$";
 }
+
+function confirmar(){
+
+    let confir = confirm("Seguro desea cancelar");
+
+    if(confir){
+        location.reload();
+    }
+}
