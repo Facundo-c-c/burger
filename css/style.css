@@ -4,18 +4,28 @@
 
 }
 img{
-    background-color: rgb(222, 221, 221); 
-
+    background-color: rgb(222, 221, 221);
 }
 .navbar{
     display: flex;
     justify-content: center;
 }
 .card-img-top,
+.card-img,
 .card{
     border-top-left-radius: 50px;
     border-top-right-radius: 50px; 
+    transition: 90ms;
 }
+.card-img:hover{
+    transform: scale(1.1);
+    transition: 50ms;
+}
+.card-img,
+.sombra{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
 *{
     font-family: nerd-font;
 }
@@ -25,4 +35,15 @@ img{
 }
 header{
     border-bottom: 3px black;
+}
+footer{
+    text-align: center;
+}
+table{
+    border: 1px solid;
+}
+.footer-text{
+    margin-left: 5px;
+    margin-right: 5px;
+    font-size: 10px;
 }

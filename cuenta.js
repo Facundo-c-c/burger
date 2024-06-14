@@ -40,11 +40,8 @@ function precio_tabla(num) {
     pecio_total.innerHTML = "Pagar " + monto_total + "$";
 }
 
-function confirmar(){
-
-    let confir = confirm("Seguro desea cancelar");
-
-    if(confir){
+function confirmar(yes){
+    if(yes){
         location.reload();
     }
 }
