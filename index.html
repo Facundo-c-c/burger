@@ -15,152 +15,145 @@
     crossorigin="anonymous"></script>
   <link rel="stylesheet" href="css/dark.css"> <!-- boswatch -->
 </head>
-
-<body>
-  <header>
-    <nav class="navbar navbar-expand-lg bg-dark" data-bs-theme="dark">
-      <H1 style="color: ghostwhite;">󰚅 Menu Hamburguesa 󰚅</H1>
-    </nav>
-  </header>
-  <main>
-    <section class="card-imagenes">
-      <div class="row g-0 text-center" style="margin-top: 50px; margin-bottom: 50px;">
-        <div class="col-1"></div>
-        <div class="col-10">
-          <div class="row row-cols-1 row-cols-md-3 g-4">
-            <div class="col">
-              <div class="card h-100 card-img">
-                <img src="img/simple.png" class="card-img-top" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">Hamburguesa Simple</h5>
-                  <p class="card-text">Hamburguesa Simple 10$</p>
-                </div>
-                <div class="card-footer">
-                  <small class="text-body-secondary">
-                    <button type="button" class="btn btn-danger" onclick="precio_tabla(1)"></button>
-                  </small>
-                </div>
+<header>
+  <nav class="navbar navbar-expand-lg bg-dark" data-bs-theme="dark">
+    <H1 style="color: ghostwhite;">󰚅 Menu Hamburguesa 󰚅</H1>
+  </nav>
+</header>
+<main>
+  <section class="card-imagenes">
+    <div class="row g-0 text-center" style="margin-top: 50px; margin-bottom: 50px;">
+      <div class="col-1"></div>
+      <div class="col-10">
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+          <div class="col">
+            <div class="card h-100 card-img">
+              <img src="img/simple.png" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Hamburguesa Simple</h5>
+                <p class="card-text">Hamburguesa Simple 10$</p>
               </div>
-            </div>
-            <div class="col">
-              <div class="card h-100 card-img">
-                <img src="img/doble.png" class="card-img-top" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">Hamburguesa Doble</h5>
-                  <p class="card-text">Hamburguesa doble 15$</p>
-                </div>
-                <div class="card-footer">
-                  <small class="text-body-secondary">
-                    <button type="button" class="btn btn-danger" onclick="precio_tabla(2)"></button>
-                  </small>
-                </div>
-              </div>
-            </div>
-            <div class="col">
-              <div class="card h-100 card-img">
-                <img src="img/triple.webp" class="card-img-top" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">Hamburguesa Triple</h5>
-                  <p class="card-text">Hamburguesa Triple 30$</p>
-                </div>
-                <div class="card-footer">
-                  <small class="text-body-secondary">
-                    <button type="button" class="btn btn-danger" onclick="precio_tabla(3)"></button>
-                  </small>
-                </div>
+              <div class="card-footer">
+                <small class="text-body-secondary">
+                  <button type="button" class="btn btn-danger" onclick="precio_tabla(1);recalcular_precio()"></button> <!--Llamo a la funcion para crear el espacio en la tabla y recalculo el precio-->
+                </small>
               </div>
             </div>
           </div>
-        </div>
-        <div class="col-1"></div>
-      </div>
-    </section>
-    <section style="margin-bottom: 15px;">
-      <div class="row g-0 text-center">
-        <div class="col-1"></div>
-        <div class="col-10">
-          <table class="table">
-            <thead>
-              <tr>
-                <th scope="col">Hamburguesa</th>
-                <th scope="col">Precio</th>
-              </tr>
-            </thead>
-            <tbody class="table-group-divider" id="t_body">
-            </tbody>
-          </table>
-        </div>
-        <div class="col-1"></div>
-      </div>
-    </section>
-    <section class="row g-0 text-center" style="margin-bottom: 20px;">
-      <div class="col-2"></div>
-      <div class="col-8 sombra">
-        <div class="card text-center">
-          <div class="card-header">
-            Pagar
-          </div>
-          <div class="card-body">
-            <h5 class="card-title">Pagar comprar</h5>
-            <p class="card-text"></p>
-            <div style="display: flex; justify-content: center;">
+          <div class="col">
+            <div class="card h-100 card-img">
+              <img src="img/doble.png" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Hamburguesa Doble</h5>
+                <p class="card-text">Hamburguesa doble 15$</p>
+              </div>
+              <div class="card-footer">
+                <small class="text-body-secondary">
+                  <button type="button" class="btn btn-danger" onclick="precio_tabla(2);recalcular_precio()"></button>
+                </small>
+              </div>
             </div>
-            <a href="#" class="btn btn-outline-success" id="boton_precio" onclick="confirmar(true)">Pagar</a>
-            <button type="button" class="btn btn-outline-warning" data-bs-toggle="modal" data-bs-target="#exampleModal">
-              Cancelar
-            </button>
-            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
-              aria-hidden="true">
-              <div class="modal-dialog">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="exampleModalLabel">¿Desea cancelar?</h1>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                  </div>
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-                    <button type="button" class="btn btn-primary" onclick="confirmar(true)">Aceptar</button>
-                  </div>
-                </div>
+          </div>
+          <div class="col">
+            <div class="card h-100 card-img">
+              <img src="img/triple.webp" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Hamburguesa Triple</h5>
+                <p class="card-text">Hamburguesa Triple 30$</p>
+              </div>
+              <div class="card-footer">
+                <small class="text-body-secondary">
+                  <button type="button" class="btn btn-danger" onclick="precio_tabla(3);recalcular_precio()"></button>
+                </small>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <div class="col-2"></div>
-    </section>
-  </main>
-  <footer style="margin-top: 30px; margin-bottom: 10px;" class="row g-0">
-    <div class="col-1"></div>
-    <div class="col-10">
-      <div class="card" style=" border-radius: 15px;">
+      <div class="col-1"></div>
+    </div>
+  </section>
+  <section style="margin-bottom: 15px;">
+    <div class="row g-0 text-center">
+      <div class="col-1"></div>
+      <div class="col-10">
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">Hamburguesa</th>
+              <th scope="col">Precio</th>
+            </tr>
+          </thead>
+          <tbody class="table-group-divider" id="t_body">
+          </tbody>
+        </table>
+      </div>
+      <div class="col-1"></div>
+    </div>
+  </section>
+  <section class="row g-0 text-center" style="margin-bottom: 20px;">
+    <div class="col-2"></div>
+    <div class="col-8 sombra">
+      <div class="card text-center" style="justify-content: center; display: flex;">
+        <div class="card-header">
+          Pagar
+        </div>
+        <div style="justify-content: center; align-items: center; display: flex; margin-top: 5px;">
+          <div class="form-check form-switch">
+            <input class="form-check-input" type="checkbox" id="mediopago" onclick="recalcular_precio()">
+            <label class="form-check-label" for="flexCheckDefault">
+              Pagar con tarjeta
+            </label>
+          </div>
+        </div>
         <div class="card-body">
-          <h5 class="card-title">Footer</h5>
-          <p class="card-text">yo que se</p>
-          <div style="display: flex; justify-content: center;" class="footer-div">
-            <div class="footer-text"><a href="https://twitter.com/home" class="btn btn-primary"></a></div>
-            <div class="footer-text"><a href="https://www.facebook.com/" class="btn btn-primary"></a></div>
-            <div class="footer-text"><a href="https://web.whatsapp.com/" class="btn btn-primary"></a></div>
+          <h5 class="card-title">Pagar compra</h5>  
+          <p class="card-text"></p>
+          <a href="#" class="btn btn-outline-success" id="boton_precio" onclick="confirmar(true)">Pagar</a>
+          <button type="button" class="btn btn-outline-warning" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            Cancelar
+          </button>
+          <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h1 class="modal-title fs-5" id="exampleModalLabel">¿Desea cancelar?</h1>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                  <button type="button" class="btn btn-primary" onclick="confirmar(true)">Aceptar</button>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
-    <div class="col-1"></div>
-  </footer>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-    crossorigin="anonymous"></script>
+    <div class="col-2"></div>
+  </section>
+</main>
+<footer style="margin-top: 30px; margin-bottom: 10px;" class="row g-0">
+  <div class="col-1"></div>
+  <div class="col-10">
+    <div class="card" style=" border-radius: 15px;">
+      <div class="card-body">
+        <h5 class="card-title">Footer</h5>
+        <p class="card-text">un footer</p>
+        <div style="display: flex; justify-content: center;" class="footer-div">
+          <div class="footer-text"><a href="https://twitter.com/home" class="btn btn-primary"></a></div>
+          <div class="footer-text"><a href="https://www.facebook.com/" class="btn btn-primary"></a></div>
+          <div class="footer-text"><a href="https://web.whatsapp.com/" class="btn btn-primary"></a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-1"></div>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 <link rel="stylesheet" href="css/style.css"> <!-- Mis archivos-->
 <script src="cuenta.js"></script>
-
 </html>
-
-<!--Funcion 
-
-  pararme en lugar
-  Definir objeto
-  Dar valores
-  Agregar
-
--->
