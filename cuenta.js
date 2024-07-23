@@ -40,10 +40,8 @@ function precio_tabla(num) {
     precio_total.innerHTML = "Pagar " + monto_total + "$";
 }
 
-function confirmar(yes){ //recargar pagina
-    if(yes){
-        location.reload();
-    }
+function confirmar(){ //recargar pagina
+    location.reload();
 }
 
 function recalcular_precio(){ //recalculo precio con o sin impuesto
@@ -51,7 +49,6 @@ function recalcular_precio(){ //recalculo precio con o sin impuesto
     let medio_pago = document.getElementById("mediopago");
     let precio_total = document.getElementById("boton_precio");
     let precio_calculo;   
-    console.log(medio_pago.checked)
 
     if (medio_pago.checked == true){
         precio_calculo = monto_total * 1.50;
